@@ -9,23 +9,23 @@ let echarts = require("echarts/lib/echarts");
 
 export default {
   name: "partThree",
-  data() {
+  data () {
     return {
       partThree: "part-three",
       curWidth: 0
     };
   },
-  beforeMount() {
+  beforeMount () {
     this.curWidth = document.documentElement.clientWidth || document.body.clientWidth;
-    if(this.curWidth < 1600) {
+    if (this.curWidth < 1600) {
       this.partThree = "part-three-responsive"
     }
   },
-  mounted() {
+  mounted () {
     this.drawECharts();
   },
   methods: {
-    drawECharts() {
+    drawECharts () {
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById("part-three"));
 
@@ -54,7 +54,7 @@ export default {
           textStyle: {
             color: "#fff"
           },
-          data: [ "HTML5", "CSS3", "JavaScript", "jQuery", "Vue", "Node", "微信小程序", "其他" ]
+          data: ["HTML5", "CSS3", "JavaScript", "jQuery", "Vue", 'React', "Node", "微信小程序", "其他"]
         },
         // 注记显示手柄
         calculable: true,
@@ -63,7 +63,7 @@ export default {
           {
             name: "技能分布",
             type: "pie",
-            radius: [30, 110],
+            radius: '50%',
             roseType: "area",
             data: [
               { value: 15, name: "HTML5" },
@@ -71,6 +71,7 @@ export default {
               { value: 20, name: "JavaScript" },
               { value: 20, name: "jQuery" },
               { value: 20, name: "Vue" },
+              { value: 20, name: "React" },
               { value: 15, name: "Node" },
               { value: 25, name: "微信小程序" },
               { value: 15, name: "其他" }

@@ -8,23 +8,23 @@ let echarts = require("echarts/lib/echarts");
 
 export default {
   name: "partFour",
-  data() {
+  data () {
     return {
       partFour: "part-four",
       curWidth: 0
     };
   },
-  beforeMount() {
+  beforeMount () {
     this.curWidth = document.documentElement.clientWidth || document.body.clientWidth;
-    if(this.curWidth < 1600) {
+    if (this.curWidth < 1600) {
       this.partFour = "part-four-responsive"
     }
   },
-  mounted() {
+  mounted () {
     this.drawECharts();
   },
   methods: {
-    drawECharts() {
+    drawECharts () {
       // 基于准备好的dom，初始化echarts实例
       let myChart = echarts.init(document.getElementById("part-four"));
 
@@ -78,6 +78,7 @@ export default {
           {
             // 图类型
             type: "bar",
+            barWidth: '30%',
             // 数据
             data: [1141, 269, 1508, 234],
             // 文本

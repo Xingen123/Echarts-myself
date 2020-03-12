@@ -1,24 +1,30 @@
 <template>
   <div :class="partSix">
     <h3 class="text-center">编程技能</h3>
-    <p class="font-small"><span class="font-bold">前端：</span>HTML/HTML5、CSS/CSS3、JS/ES6、jQuery、Vue、微信小程序……</p>
-    <p class="font-small"><span class="font-bold">后端：</span>Node、PHP</p>
-    <p class="font-small"><span class="font-bold">其他：</span>MongoDB、MySQL、Sqlserver</p>
+    <p class="font-small">
+      <span class="font-bold">前端：</span>HTML/HTML5、CSS/CSS3、JS/ES6、jQuery、Vue、React、微信小程序……
+    </p>
+    <p class="font-small">
+      <span class="font-bold">后端：</span>Node
+    </p>
+    <p class="font-small">
+      <span class="font-bold">其他：</span>Echart,Antv
+    </p>
   </div>
 </template>
 
 <script>
 export default {
   name: "partSix",
-  data() {
+  data () {
     return {
       partSix: "part-six",
       curWidth: 0
     };
   },
-  beforeMount() {
+  beforeMount () {
     this.curWidth = document.documentElement.clientWidth || document.body.clientWidth;
-    if(this.curWidth < 1600) {
+    if (this.curWidth < 1600) {
       this.partSix = "part-six-responsive"
     }
   }
@@ -43,7 +49,7 @@ export default {
   text-align: center;
 }
 .font-small {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 .font-bold {
   font-weight: bold;
